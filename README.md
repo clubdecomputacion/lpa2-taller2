@@ -4,7 +4,7 @@ Sistema completo de generación de facturas, utilizando [FastAPI](https://fastap
 
 ## Autor
 
-- Nombre del Estudiante - @perfil_de_github
+- Derik Jair Hurtado Sinisterra - [@DerikHurt](https://github.com/DerikHurt)
 
 ## Descripción del Proyecto
 

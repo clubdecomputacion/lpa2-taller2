@@ -9,12 +9,17 @@
 <body>
     <div class="container">
         <h1>Generador de Facturas PDF</h1>
-        <form method="POST" action="/generar-pdf">
+        <form id="form-factura" method="POST" action="{{ url_for('generar_pdf') }}">
             <div class="form-group">
                 <label for="id_factura">ID de Factura:</label>
-                <input type="text" id="id_factura" name="id_factura" required>
+                <input type="text" id="id_factura" name="id_factura"
+                       placeholder="Ej: FAC-2025-001" pattern="[A-Za-z0-9_\-]+"
+                       title="Solo letras, números, guiones y guion bajo" required>
             </div>
-            <button type="submit">Generar PDF</button>
+            <div class="acciones">
+                <button type="submit" formtarget="_blank">Ver PDF</button>
+                <button type="submit" name="descargar" value="1" class="secundario">Descargar PDF</button>
+            </div>
         </form>
         
         {% with messages = get_flashed_messages() %}
@@ -27,5 +32,6 @@
             {% endif %}
         {% endwith %}
     </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
